@@ -32,7 +32,7 @@ public class KiaTest {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"header\"]/div/div[3]/ul/li[1]/div/div[2]/ul/li[7]/div/div/p[2]/a[1]")).click();
 
-        //Tiempo de espera - Hacer scroll de 5550 pixel en vertical
+        //Tiempo de espera - Hacer scroll de 5550 pixeles en vertical
         //((JavascriptExecutor)driver).executeScript("scroll(0,5550)");
         Thread.sleep(500);
         ((JavascriptExecutor)driver).executeScript("scroll(0,1000)");
@@ -45,8 +45,30 @@ public class KiaTest {
         Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@id='content']/div[12]/div[3]/ul/li[2]/a")).click();
 
-        //Tiempo de espera - Cerrar navegador
+        //Formulario
+
+        //Tiempo de espera - slider
+        WebElement drag = driver.findElement(By.xpath("//*[@id=\"slider-range1\"]/span"));
+        Thread.sleep(1000);
+        Actions act = new Actions(driver);
+        act.dragAndDropBy(drag,490,0).perform();
+
+        //Año Modelo
+        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[2]/div/div[1]/ol/li[1]/div[2]/ul/li[1]/div[2]/span/span/div")).click();
         Thread.sleep(500);
+        driver.findElement(By.xpath("//*[@id='content']/div/div[2]/div/div[1]/ol/li[1]/div[2]/ul/li[1]/div[2]/span/span/div/ul/li[2]/a")).click();
+
+        Thread.sleep(500);
+
+        //Modelo
+        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[2]/div/div[1]/ol/li[1]/div[2]/ul/li[2]/div[2]/span/span/div")).click();
+        Thread.sleep(800);
+        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[2]/div/div[1]/ol/li[1]/div[2]/ul/li[2]/div[2]/span/span/div/ul/li[10]/a")).click();
+
+        driver.findElement(By.id("1_Siguiente")).click();
+
+        //Tiempo de espera - Cerrar navegador
+        Thread.sleep(5000);
         //driver.close();
 
 
