@@ -47,25 +47,27 @@ public class KiaTest {
 
         //Formulario
 
+        //Año Modelo
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[2]/div/div[1]/ol/li[1]/div[2]/ul/li[1]/div[2]/span/span/div")).click();
+        Thread.sleep(500);
+        driver.findElement(By.xpath("//*[@id='content']/div/div[2]/div/div[1]/ol/li[1]/div[2]/ul/li[1]/div[2]/span/span/div/ul/li[2]/a")).click();
+
+        //Modelo
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[2]/div/div[1]/ol/li[1]/div[2]/ul/li[2]/div[2]/span/span/div")).click();
+        Thread.sleep(800);
+        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[2]/div/div[1]/ol/li[1]/div[2]/ul/li[2]/div[2]/span/span/div/ul/li[10]/a")).click();
+
         //Tiempo de espera - slider
+        Thread.sleep(3000);
         WebElement drag = driver.findElement(By.xpath("//*[@id=\"slider-range1\"]/span"));
         Thread.sleep(1000);
         Actions act = new Actions(driver);
         act.dragAndDropBy(drag,490,0).perform();
 
-        //Año Modelo
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[2]/div/div[1]/ol/li[1]/div[2]/ul/li[1]/div[2]/span/span/div")).click();
-        Thread.sleep(500);
-        driver.findElement(By.xpath("//*[@id='content']/div/div[2]/div/div[1]/ol/li[1]/div[2]/ul/li[1]/div[2]/span/span/div/ul/li[2]/a")).click();
 
-        Thread.sleep(500);
-
-        //Modelo
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[2]/div/div[1]/ol/li[1]/div[2]/ul/li[2]/div[2]/span/span/div")).click();
-        Thread.sleep(800);
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[2]/div/div[1]/ol/li[1]/div[2]/ul/li[2]/div[2]/span/span/div/ul/li[10]/a")).click();
-
-        driver.findElement(By.id("1_Siguiente")).click();
+        //driver.findElement(By.id("1_Siguiente")).click();
 
         //Tiempo de espera - Cerrar navegador
         Thread.sleep(5000);
